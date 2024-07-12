@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dzqa2piuh/image/upload/v1720329576/favicon-32x32_qvmwkg.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <title>Document</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+            * {
+                font-family: 'Montserrat';
+                color: black;
+                overflow-x: hidden;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            ::-webkit-scrollbar {width: 1px;}
+            ::-webkit-scrollbar-track {background: transparent;}
+            ::-webkit-scrollbar-thumb {background: transparent;}
+            ::-webkit-scrollbar-thumb:hover {background: transparent;}
+            nav {
+            overflow: hidden;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                height: 10vh;
+                background-color: white;
+                z-index: 1;
+            }
+            .navtitle {
+                text-align: center;
+                font-size: 2.5vw;
+                margin-left: 5vw;
+            }
+            .navlinks {
+                margin-right: 5vw;
+                width: 60%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            .navlinks a {
+                text-decoration: none;
+                color: black;
+            }
+            .navlinks a:hover {
+                text-decoration: underline;
+            }
+            .container {
+                scroll-snap-type: y mandatory;
+                overflow-y: scroll;
+                height: 90vh;
+                margin-top: 10vh;
+            }
+            section {
+                height: 90vh;
+                width: 100vw;
+                scroll-snap-align: start;
+            }
+            .wrapper {
+                height: 100%;
+                width: 100%;
+                background-color: aqua;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3vw;
+            }
+            #up{
+                position: absolute;
+                top: 12vh;
+                right: 1%;
+                background-color: transparent;
+                border-color: transparent;
+            }
+            #down{
+                position: absolute;
+                bottom: 2vh;
+                right: 1%;
+                background-color: transparent;
+                border-color: transparent;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="navtitle">
+                <img src="https://res.cloudinary.com/dzqa2piuh/image/upload/v1720329576/favicon-32x32_qvmwkg.png">
+                VIRAJ
+            </div>
+            <div class="navlinks">
+                <a onclick="navbar('#home')">HOME</a>
+                <a onclick="navbar('#about')">ABOUT</a>
+                <a onclick="navbar('#skills')">SKILLS</a>
+                <a onclick="navbar('#experience')">EXPERIENCE</a>
+                <a onclick="navbar('#academics')">ACADEMICS</a>
+                <a onclick="navbar('#projects')">PROJECTS</a>
+                <a onclick="navbar('#services')">SERVICES</a>
+                <a onclick="navbar('#links')">LINKS</a>
+                <a onclick="navbar('#contact')">CONTACT</a>
+                <img src="https://img.icons8.com/?size=48&id=UlOVIfVgfNz1&format=png&color=000000">
+                <!-- https://img.icons8.com/?size=100&id=8EUmYhfLPTCF&format=png&color=000000 -->
+            </div>
+        </nav>
+        <div class="container">
+            <section id="home">
+                <div class="wrapper">
+                    <h1>Hi, I'm Viraj</h1>
+                    <h5>Student at Vellore Institute of Technology</h5>
+                    <h5>21 | Artificial Intelligence | Machine Learning | Data Science | Software Development</h5>
+                    <button>Contact <i></i></button>
+                </div>
+            </section>
+            <section id="about">
+                <div class="wrapper">
+                    <h1>
+                </div>
+            </section>
+            <section id="skills">
+                <div class="wrapper">
+                    SKILLS
+                </div>
+            </section>
+            <section id="experience">
+                <div class="wrapper">
+                    EXPERIENCE
+                </div>
+            </section>
+            <section id="academics">
+                <div class="wrapper">
+                    ACADEMICS
+                </div>
+            </section>
+            <section id="projects">
+                <div class="wrapper">
+                    PROJECTS
+                </div>
+            </section>
+            <section id="services">
+                <div class="wrapper">
+                    SERVICES
+                </div>
+            </section>
+            <section id="links">
+                <div class="wrapper">
+                    LINKS
+                </div>
+            </section>
+            <section id="contact">
+                <div class="wrapper">
+                    CONTACT
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
