@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    font-family: 'Montserrat';
+    color: #0D1F2D;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {width: 1px;}
+::-webkit-scrollbar-track {background: transparent;}
+::-webkit-scrollbar-thumb {background: transparent;}
+::-webkit-scrollbar-thumb:hover {background: transparent;}
+nav {
+overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: white;
+    z-index: 1;
+}
+.navtitle {
+    text-align: center;
+    font-size: 2.5vw;
+    margin-left: 5vw;
+}
+.navlinks {
+    margin-right: 5vw;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.navlinks a {
+    text-decoration: none;
+    color: #0D1F2D;
+}
+.navlinks a:hover {
+    text-decoration: underline;
+}
+.container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 90vh;
+    margin-top: 10vh;
+}
+section {
+    height: 90vh;
+    width: 100vw;
+    scroll-snap-align: start;
+}
+.wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vw;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    padding: 2%;
+}
+
+.wrapper h5{
+    font-weight: 400;
+    font-size: 3vw;
+    margin-bottom: 2%;
+}
+
+strong{
+    display: inline;
+}
+
+#home .wrapper{
+    flex-direction: row;
+}
+
+#home .information{
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2%;
+    margin-top: 10%;
+}
+
+#home .information h5{
+    font-size: 3vh;
+    font-weight: 500;
+}
+
+#home .information button{
+    width: 30%;
+    border: 5px solid #FFE8AD;
+    font-size: 5vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 50px;
+    background-color: transparent;
+}
+
+#home .information button:hover{
+    box-shadow: 1px 1px 2px #FFBA0A, 0 0 25px #FFD15C, 0 0 5px #FFE8AD;
+}
+
+#home .photo{
+    overflow: hidden;
+    margin: 2%;
+    padding: 2% ;
+}
+
+#home .photo img{
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    box-shadow: 1px 1px 2px #FFBA0A, 0 0 25px #FFD15C, 0 0 5px #FFE8AD;
+}
+
+#about .wrapper{
+    flex-direction: row;
+    text-align: justify;
+    font-size: 2vh;
+    height: 90vh;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+#about .information{
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0%;
+}
+
+#about .wrapper img{
+    width: 35vw;
+    margin-top: 20vh;
+}
+
+#skills .wrapper .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80vh;
+}
+
+#skills .wrapper .content h6{
+    font-weight: 400;
+    margin-top: 2%;
+}
+
+#skills .wrapper .content p{
+    font-size: 2.5vh;
+}
+
+#skills .wrapper .content .concepts{
+    width: 48vw;
+}
+
+#skills .wrapper .content .tools{
+    width: 48vw;
+}
+
+#skills .content .concepts button{
+    width: 30%;
+    border: 5px solid #FFE8AD;
+    font-size: 3vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 50px;
+    background-color: transparent;
+}
+
+#skills .content .concepts button:hover{
+    background-color: #FFE8AD;
+}
+

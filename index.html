@@ -5,89 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dzqa2piuh/image/upload/v1720329576/favicon-32x32_qvmwkg.png">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="./style.css">
+        <script src="./script.js"></script>
         <title>Document</title>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-            * {
-                font-family: 'Montserrat';
-                color: black;
-                overflow-x: hidden;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            ::-webkit-scrollbar {width: 1px;}
-            ::-webkit-scrollbar-track {background: transparent;}
-            ::-webkit-scrollbar-thumb {background: transparent;}
-            ::-webkit-scrollbar-thumb:hover {background: transparent;}
-            nav {
-            overflow: hidden;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                position: fixed;
-                top: 0;
-                width: 100%;
-                height: 10vh;
-                background-color: white;
-                z-index: 1;
-            }
-            .navtitle {
-                text-align: center;
-                font-size: 2.5vw;
-                margin-left: 5vw;
-            }
-            .navlinks {
-                margin-right: 5vw;
-                width: 60%;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-evenly;
-            }
-            .navlinks a {
-                text-decoration: none;
-                color: black;
-            }
-            .navlinks a:hover {
-                text-decoration: underline;
-            }
-            .container {
-                scroll-snap-type: y mandatory;
-                overflow-y: scroll;
-                height: 90vh;
-                margin-top: 10vh;
-            }
-            section {
-                height: 90vh;
-                width: 100vw;
-                scroll-snap-align: start;
-            }
-            .wrapper {
-                height: 100%;
-                width: 100%;
-                background-color: aqua;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 3vw;
-            }
-            #up{
-                position: absolute;
-                top: 12vh;
-                right: 1%;
-                background-color: transparent;
-                border-color: transparent;
-            }
-            #down{
-                position: absolute;
-                bottom: 2vh;
-                right: 1%;
-                background-color: transparent;
-                border-color: transparent;
-            }
-        </style>
     </head>
     <body>
         <nav>
@@ -96,68 +16,148 @@
                 VIRAJ
             </div>
             <div class="navlinks">
-                <a onclick="navbar('#home')">HOME</a>
-                <a onclick="navbar('#about')">ABOUT</a>
-                <a onclick="navbar('#skills')">SKILLS</a>
-                <a onclick="navbar('#experience')">EXPERIENCE</a>
-                <a onclick="navbar('#academics')">ACADEMICS</a>
-                <a onclick="navbar('#projects')">PROJECTS</a>
-                <a onclick="navbar('#services')">SERVICES</a>
-                <a onclick="navbar('#links')">LINKS</a>
-                <a onclick="navbar('#contact')">CONTACT</a>
-                <img src="https://img.icons8.com/?size=48&id=UlOVIfVgfNz1&format=png&color=000000">
-                <!-- https://img.icons8.com/?size=100&id=8EUmYhfLPTCF&format=png&color=000000 -->
+                <a onclick="navbar('home')">HOME</a>
+                <a onclick="navbar('about')">ABOUT</a>
+                <a onclick="navbar('skills')">SKILLS</a>
+                <a onclick="navbar('experience')">EXPERIENCE</a>
+                <a onclick="navbar('academics')">ACADEMICS</a>
+                <a onclick="navbar('projects')">PROJECTS</a>
+                <a onclick="navbar('links')">LINKS</a>
+                <a onclick="navbar('contact')">CONTACT</a>
+                <a onclick="navbar('updates')">UPDATES</a>
             </div>
         </nav>
         <div class="container">
             <section id="home">
                 <div class="wrapper">
-                    <h1>Hi, I'm Viraj</h1>
-                    <h5>Student at Vellore Institute of Technology</h5>
-                    <h5>21 | Artificial Intelligence | Machine Learning | Data Science | Software Development</h5>
-                    <button>Contact <i></i></button>
+                    <div class="information">
+                        <h1>Hi, I'm Viraj Paradkar</h1>
+                        <h6>Student at Vellore Institute of Technology</h6><br>
+                        <h5>21 | Artificial Intelligence | Machine Learning | Data Science | Software Development</h5><br>
+                        <button>Contact</button>
+                    </div>
+                    <div class="photo">
+                        <img src="./assets/images/Passport Size Photo.JPG">
+                    </div>
                 </div>
             </section>
             <section id="about">
                 <div class="wrapper">
-                    <h1>
+                    <div class="information">
+                        <h5> About Me</h5>
+                        <p>Hello! I'm a dedicated AI enthusiast with a background in Computer Science from VIT Bhopal, where I pursued my passion for blending technology with real-world applications. My academic and professional journey is underpinned by a philosophy of <strong>continuous improvement</strong> and a commitment to ethical <strong>innovation</strong>.</p>
+                        <br>
+                        <p>My approach to problem-solving is deeply influenced by a belief in the power of technology to transform lives. This is reflected in my projects, from developing AI-driven solutions like 'Sanvad,' a chatbot that bridges language barriers in India. Each project embodies my dedication to enhancing accessibility and understanding through technology.</p>
+                        <br>
+                        <p>I pride myself on my ability to empathize with users, which guides my design and implementation of technology solutions that are not only efficient but also user-friendly and inclusive. My work with 'Doctorify,' a disease prognosis app that aids rural areas with basic healthcare, and 'Assistance for Adaptive Infancy,' an app supporting post-natal mothers, showcases my focus on community-centric solutions.</p>
+                        <br>
+                        <p>Leadership, collaboration, and a steadfast commitment to learning are the cornerstones of my professional ethos. As I look forward to advancing my education and career in artificial intelligence, I am eager to join and contribute to environments that challenge the status quo and value innovative thinking.</p>
+                        <br>
+                        <p>My motto, "Innovate with intent, lead with compassion," drives my ambition to be at the forefront of AI, developing technologies that make a difference, one solution at a time.</p>
+                    </div>
+                    <div class="photo">
+                        <img src="./assets/vectors/about.svg" width="90%">
+                    </div>
                 </div>
             </section>
             <section id="skills">
                 <div class="wrapper">
-                    SKILLS
+                    <h5>SKILLS</h5>
+                    <div class="content">
+                        <div class="concepts">
+                            <h6>Concepts</h6>
+                            <p>- Problem Solving</p>
+                            <p>- Machine Learning</p>
+                            <p>- Deep Learning</p>
+                            <p>- Neural Networks</p>
+                            <p>- Image Recognition</p>
+                            <p>- Cloud Computing</p>
+                            <p>- System Design</p>
+                            <h6>Coursework</h6>
+                            <p>- Data Structures and Algorithms</p>
+                            <p>- Operating Systems</p>
+                            <p>- Database Management Systems</p>
+                            <p>- Computer Networks</p>
+                            <p>- Software Engineering</p>
+                            <p>- Software Project Management</p>
+                            <p>- Computer Organization Architecture</p>
+                            <p>- Computer Networks</p>
+                            <h6>Certifications</h6>
+                            <button>Certification</button>
+                        </div>
+                        <div class="tools">
+                            <h6>Languages</h6>
+                            <div class="skill-grid">
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/python--v1.png" alt="python--v1"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/java-coffee-cup-logo--v1.png" alt="java-coffee-cup-logo--v1"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/c-plus-plus-logo.png" alt="c-plus-plus-logo"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/c-programming.png" alt="c-programming"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/dart.png" alt="dart"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/javascript--v1.png" alt="javascript--v1"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/html-5--v1.png" alt="html-5--v1"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/css3.png" alt="css3"/>
+                                <img width="64" height="64" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/64/external-rust-is-a-multi-paradigm-system-programming-language-logo-shadow-tal-revivo.png" alt="external-rust-is-a-multi-paradigm-system-programming-language-logo-shadow-tal-revivo"/>
+                                <img width="64" height="64" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/64/external-r-project-a-free-software-environment-for-statistical-computing-and-graphics-logo-shadow-tal-revivo.png" alt="external-r-project-a-free-software-environment-for-statistical-computing-and-graphics-logo-shadow-tal-revivo"/>
+                            </div>
+                            <h6>Libraries</h6>
+                            <div class="skill-grid">
+                                <img width="64" height="64" src="https://img.icons8.com/ios/64/flask.png" alt="flask"/>
+                                <img width="64" height="64" src="https://img.icons8.com/fluency/64/pytorch.png" alt="pytorch"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/tensorflow.png" alt="tensorflow">
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/pandas.png" alt="pandas"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/numpy.png" alt="numpy"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/opencv.png" alt="opencv"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/flutter.png" alt="flutter"/>
+                            </div>
+                            <h6>Tools</h6>
+                            <div class="skill-grid">
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/grafana.png" alt="grafana"/>
+                                <img width="64" height="64" src="https://img.icons8.com/fluency/64/power-bi-2021.png" alt="power-bi-2021"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/amazon-web-services.png" alt="amazon-web-services"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/mongo-db.png" alt="mongo-db"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/mysql-logo.png" alt="mysql-logo"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/figma--v1.png" alt="figma--v1"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/git.png" alt="git"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/google-cloud.png" alt="google-cloud"/>
+                                <img width="64" height="64" src="https://img.icons8.com/color/64/firebase.png" alt="firebase"/>
+                                <img width="64" height="64" src="https://img.icons8.com/fluency/64/supabase.png" alt="supabase"/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section id="experience">
                 <div class="wrapper">
-                    EXPERIENCE
+                    <h5>EXPERIENCE</h5>
                 </div>
             </section>
             <section id="academics">
                 <div class="wrapper">
-                    ACADEMICS
+                    <h5>ACADEMICS</h5>
                 </div>
             </section>
             <section id="projects">
                 <div class="wrapper">
-                    PROJECTS
-                </div>
-            </section>
-            <section id="services">
-                <div class="wrapper">
-                    SERVICES
+                    <h5>PROJECTS</h5>
                 </div>
             </section>
             <section id="links">
                 <div class="wrapper">
-                    LINKS
+                    <h5>LINKS</h5>
                 </div>
             </section>
             <section id="contact">
                 <div class="wrapper">
-                    CONTACT
+                    <h5>CONTACT</h5>
                 </div>
             </section>
+            <section id="updates">
+                <div class="wrapper">
+                    <h5>UPDATES</h5>
+                    <a class="twitter-timeline" href="https://twitter.com/Codezy93?ref_src=twsrc%5Etfw">Tweets by Codezy93</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </section>
+        </div>
         </div>
     </body>
 </html>
