@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+            * {
+                font-family: 'Montserrat';
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            .background {
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+                position: absolute;
+                background: #ffffff;
+            }
+
+            .marquee, .marquee-reverse {
+                user-select: none;
+                display: flex;
+                position: relative;
+                width: calc(140%);
+                animation: marquee 15s linear infinite;
+            }
+
+            .marquee-reverse {
+                animation-direction: reverse;
+            }
+
+            .marquee img, .marquee-reverse img {
+                width: 10%;
+                flex-shrink: 0;
+                filter: blur(15px);
+                margin: 1%;
+                user-select: none;
+                -webkit-user-drag: none;
+            }
+
+            @keyframes marquee {
+                from {
+                    transform: translateX(-100%);
+                }
+                to {
+                    transform: translateX(0%);
+                }
+            }
+
+            h2{
+                font-family: "Montserrat";
+                position: absolute;
+                top: 10%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 5vh;
+                font-weight: 400;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="background">
+            <div class="marquee">
+                <!-- Marquee forward -->
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+            </div>
+            <div class="marquee marquee-reverse">
+                <!-- Marquee reverse -->
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+            </div>
+            <div class="marquee">
+                <!-- Marquee forward -->
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+            </div>
+            <div class="marquee marquee-reverse">
+                <!-- Marquee reverse -->
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+                <img src="./assets/images/certificate.JPG" alt="">
+            </div>
+        </div>
+        <h2>CERTIFICATES</h2>
+        <div class="certificates">
+            
+        </div>
+    </body>
+</html>
