@@ -144,17 +144,107 @@
             <section id="links">
                 <div class="wrapper">
                     <h5>LINKS</h5>
+                    <div class="link-social">
+                        
+                    </div>
+                    <script>
+                        const linksMap = {
+                            "link1": ["GitHub", "https://img.icons8.com/fluency/48/github.png", "github", "https://github.com/Codezy93", "@Codezy93"],
+                            "link2": ["Reddit", "https://img.icons8.com/color/48/reddit.png", "reddit", "https://www.reddit.com/user/Codezy93/", "@Codezy93"],
+                            "link3": ["Twitter", "https://img.icons8.com/color/48/twitterx--v1.png", "twitterx--v1", "https://x.com/Codezy93", "@Codezy93"],
+                            "link4": ["Medium", "https://img.icons8.com/color/48/medium-logo.png", "medium-logo", "https://medium.com/@virajsparadkar", "@virajsparadkar"],
+                            "link5": ["Discord", "https://img.icons8.com/fluency/48/discord-logo.png", "discord-logo", "https://discord.com/channels/@me/1280119942318129214", "@Codezy93"],
+                            "link6": ["LinkedIn", "https://img.icons8.com/fluency/48/linkedin.png", "linkedin", "https://www.linkedin.com/in/viraj-paradkar/", "@viraj-paradkar"],
+                        };
+                        const linksContainer = document.getElementsByClassName('link-social')[0];
+                        Object.keys(linksMap).forEach(key => {
+                            let linkData = linksMap[key];
+                            let linkDiv = document.createElement('div');
+                            linkDiv.className = 'link-div';
+                            
+                            let img = document.createElement('img');
+                            img.src = linkData[1];
+                            img.alt = linkData[2];
+                            img.width = 64;
+                            img.height = 64;
+                            
+                            let anchor = document.createElement('a');
+                            anchor.href = linkData[3];
+                            anchor.textContent = linkData[4];
+                            
+                            linkDiv.appendChild(img);
+                            linkDiv.innerHTML += ` ${linkData[0]}`;
+                            linkDiv.appendChild(anchor);
+                            
+                            linksContainer.appendChild(linkDiv);
+                        });
+                    </script>
+                    <div class="link-coding">
+                        
+                    </div>
+                    <script>
+                        const linksMap1 = {
+                            "link1": ["CodeForces", "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-codeforces-programming-competitions-and-contests-programming-community-logo-shadow-tal-revivo.png", "codeforces", "https://codeforces.com/profile/Codezy93", "@Codezy93"],
+                            "link2": ["CodeWars", "https://img.icons8.com/fluency/48/codewars.png", "codewars", "https://www.codewars.com/users/Codezy93", "@Codezy93"],
+                            "link3": ["GFG", "https://img.icons8.com/color/48/GeeksforGeeks.png", "GeeksforGeeks", "https://www.geeksforgeeks.org/user/virajsparadkar/", "@virajsparadkar"],
+                            "link4": ["HackerEarth", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/HackerEarth_logo.png/800px-HackerEarth_logo.png", "hackerearth", "https://www.hackerearth.com/@Codezy93/", "@Codezy93"],
+                            "link5": ["HackerRank", "https://cdn.worldvectorlogo.com/logos/hackerrank.svg", "hackerrank", "https://www.hackerrank.com/profile/SpaceCoder96", "@SpaceCoder96"],
+                            "link6": ["LeetCode", "https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo.png", "leetcode", "https://leetcode.com/u/Codezy93/", "@Codezy93"],
+                            "link7": ["Exercism", "https://avatars.githubusercontent.com/u/5624255?v=4", "exercism", "https://exercism.org/profiles/Codezy93", "@Codezy93"],
+                            "link8": ["Kaggle", "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-kaggle-an-online-community-of-data-scientists-and-machine-learners-owned-by-google-logo-shadow-tal-revivo.png", "kaggle", "https://www.kaggle.com/virajparadkar", "@virajparadkar"],
+                            "link9": ["TopCoder", "https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/external-the-topcoder-community-is-the-worlds-largest-network-of-designers-developers-and-data-scientists-logo-color-tal-revivo.png", "topcoder", "https://profiles.topcoder.com/codezy93", "@Codezy93"],
+                        };
+                        const linksContainer1 = document.getElementsByClassName('link-coding')[0];
+                        Object.keys(linksMap1).forEach(key => {
+                            let linkData = linksMap1[key];
+                            let linkDiv = document.createElement('div');
+                            linkDiv.className = 'link-div';
+                            
+                            let img = document.createElement('img');
+                            img.src = linkData[1];
+                            img.alt = linkData[2];
+                            img.width = 64;
+                            img.height = 64;
+                            
+                            let anchor = document.createElement('a');
+                            anchor.href = linkData[3];
+                            anchor.textContent = linkData[4];
+                            
+                            linkDiv.appendChild(img);
+                            linkDiv.innerHTML += ` ${linkData[0]}`;
+                            linkDiv.appendChild(anchor);
+                            
+                            linksContainer1.appendChild(linkDiv);
+                        });
+                    </script>
                 </div>
             </section>
             <section id="contact">
                 <div class="wrapper">
                     <h5>CONTACT</h5>
+                    <div class="information">
+                        VIRAJ PARADKAR<br>
+                        virajsparadkar@gmail.com
+                        <form>
+                            <div class="contact-flex">
+                                <label for="fname">First Name</label>
+                                <label for="lname">Last Name</label>
+                            </div>
+                            <div class="contact-flex">
+                                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                            </div>
+                            <label for="subject">Subject</label>
+                            <textarea id="subject" name="subject" placeholder="Write something.." style="height:175px"></textarea>
+                            <br>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
                 </div>
             </section>
             <section id="updates">
                 <div class="wrapper">
                     <h5>UPDATES</h5>
-                    <a class="twitter-timeline" href="https://twitter.com/Codezy93?ref_src=twsrc%5Etfw">Tweets by Codezy93</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </section>
         </div>
