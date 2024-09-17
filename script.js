@@ -5,3 +5,6 @@ function navbar(sectionId) {
     }
 }
 
+function projectOpen(url){
+    window.open(url, target="_blank");
+}

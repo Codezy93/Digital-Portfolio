@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    font-family: 'Montserrat';
+    color: #0D1F2D;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image:url(./assets/gifs/bg.gif);
+}
+.certificates {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+.certificate {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+.certificate img {
+    width: 100%;
+    height: auto;
+}
+h2{
+    text-align: center;
+}
