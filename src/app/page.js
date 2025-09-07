@@ -8,7 +8,7 @@ import ContactSection from "@/components/ContactSection"
 import { pageMetadata } from '@/lib/seo'
 
 export const metadata = pageMetadata({
-  title: 'Projects',
+  title: 'Viraj Paradkar',
   description: 'Selected AI/ML projects and case studies.',
   path: '/projects',
 })
