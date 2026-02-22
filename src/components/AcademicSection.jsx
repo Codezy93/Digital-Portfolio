@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -10,151 +10,147 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function AcademicSection() {
   const sectionRef = useRef(null);
-  const imageRefs = useRef([]);
-  const infoRefs = useRef([]);
-  const logoRefs = useRef([]);
-  const containerRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
 
-  useGSAP(
-    () => {
-      const panels = gsap.utils.toArray(".panel");
+  useGSAP(() => {
+    const cards = sectionRef.current?.querySelectorAll(".academic-card");
+    if (!cards?.length) return;
 
-      panels.forEach((panel, i) => {
-        ScrollTrigger.create({
-          trigger: panel,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-          markers: false,
-          onToggle: (self) => {
-            if (self.isActive && self.direction === 1) {
-              setActiveIndex(i);
-            } else if (self.isActive && self.direction === -1) {
-              setActiveIndex(i);
-            }
+    cards.forEach((card) => {
+      const image = card.querySelector(".academic-img");
+      const content = card.querySelector(".academic-content");
+
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none none",
           },
-        });
+        }
+      );
 
-        const image = imageRefs.current[i];
-        const info = infoRefs.current[i];
-        const logo = logoRefs.current[i];
-
-        // Zoom in animation
+      // Subtle parallax on the background image
+      if (image) {
         gsap.fromTo(
           image,
-          { scale: 0.6, opacity: 0.6 },
+          { yPercent: -8 },
           {
-            scale: 1,
-            opacity: 1,
+            yPercent: 8,
+            ease: "none",
             scrollTrigger: {
-              trigger: panel,
-              start: "top center",
-              end: "center center",
-              scrub: true,
-              immediateRender: false,
+              trigger: card,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 0.5,
             },
           }
         );
-
-        // Zoom out animation
-        gsap.fromTo(
-          image,
-          { scale: 1, opacity: 1 },
-          {
-            scale: 0.6,
-            opacity: 0.6,
-            scrollTrigger: {
-              trigger: panel,
-              start: "center center",
-              end: "bottom center",
-              scrub: true,
-              immediateRender: false,
-            },
-          }
-        );
-
-        // Info fade in/out
-        gsap.fromTo(
-          info,
-          { opacity: 0, y: 20 },
-          {
-            opacity: 1,
-            y: 0,
-            scrollTrigger: {
-              trigger: panel,
-              start: "center-=10% center",
-              end: "center+=10% center",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-
-        // Logo fade in/out
-        gsap.fromTo(
-          logo,
-          { opacity: 0, scale: 0.8 },
-          {
-            opacity: 1,
-            scale: 1,
-            scrollTrigger: {
-              trigger: panel,
-              start: "center-=15% center",
-              end: "center+=15% center",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-      });
-    },
-    { scope: sectionRef }
-  );
+      }
+    });
+  }, { scope: sectionRef });
 
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-full overflow-hidden bg-gradient-to-r from-slate-900 to-black text-white"
+      className="relative w-full py-20 px-6 md:px-12 lg:px-20 overflow-hidden"
+      style={{
+        background:
+          "radial-gradient(ellipse at 30% 100%, #1e1b4b 0%, #0f0a1a 40%, #050208 100%)",
+      }}
     >
-      <div ref={containerRef} className="h-full">
-        {academics.map((school, index) => (
-          <div
-            key={index}
-            className="panel relative flex min-h-[100dvh] items-center justify-center overflow-hidden px-3 sm:px-6 lg:px-8"
+      {/* Ambient glows */}
+      <div
+        className="pointer-events-none absolute -top-32 left-1/3 w-[500px] h-[500px] rounded-full opacity-[0.07] blur-3xl"
+        style={{
+          background: "radial-gradient(circle, #818cf8, transparent 70%)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute bottom-0 right-10 w-80 h-80 rounded-full opacity-10 blur-3xl"
+        style={{
+          background: "radial-gradient(circle, #c084fc, transparent 70%)",
+        }}
+      />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="mb-14">
+          <p className="text-xs uppercase tracking-[0.3em] text-indigo-400/60 mb-2 font-mono">
+            Where I&apos;ve studied
+          </p>
+          <h2
+            className="text-4xl md:text-6xl font-extrabold font-mono tracking-tight"
+            style={{
+              background:
+                "linear-gradient(135deg, #a5b4fc 0%, #c084fc 50%, #f9a8d4 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
           >
-            {/* Background Image */}
-            <img
-              ref={(el) => (imageRefs.current[index] = el)}
-              src={school.image}
-              alt={school.name}
-              loading="lazy"
-              decoding="async"
-              className="absolute inset-0 h-full w-full select-none object-cover object-center filter brightness-75 contrast-110 pointer-events-none z-0"
-            />
+            Academics
+          </h2>
+        </div>
 
-            {/* Title Card */}
+        {/* Academic cards */}
+        <div className="space-y-8">
+          {academics.map((school, index) => (
             <div
-              ref={(el) => (infoRefs.current[index] = el)}
-              className="info-container absolute bottom-6 left-1/2 z-10 w-[92%] max-w-4xl -translate-x-1/2 rounded-xl border border-white/20 bg-black/35 p-4 shadow-lg backdrop-blur-md opacity-0 sm:bottom-14 sm:p-6"
+              key={index}
+              className="academic-card relative rounded-xl overflow-hidden opacity-0"
             >
-              <h2 className="text-xl font-bold sm:text-3xl md:text-4xl">{school.name}</h2>
-              <p className="mt-1 text-base text-gray-200 sm:text-lg">{school.degree}</p>
-              <p className="mt-2 text-sm sm:text-base">
-                🎓 Grade: <span className="font-semibold">{school.grade}</span>
-              </p>
-              <p className="mt-3 text-xs text-gray-300 sm:text-sm md:text-base">{school.description}</p>
-            </div>
+              {/* Background image with parallax */}
+              <div className="absolute inset-0 overflow-hidden">
+                <img
+                  src={school.image}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  className="academic-img absolute inset-0 w-full h-full object-cover object-center scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/40" />
+              </div>
 
-            {/* Logo */}
-            <img
-              ref={(el) => (logoRefs.current[index] = el)}
-              className="logo absolute left-1/2 top-6 z-10 h-14 w-14 -translate-x-1/2 rounded-full border border-white/30 bg-white/20 p-2 object-contain shadow-lg backdrop-blur-sm opacity-0 sm:top-[18%] sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-28 lg:w-28"
-              src={school.logo}
-              alt={`${school.name} logo`}
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        ))}
+              {/* Content */}
+              <div className="academic-content relative z-10 flex flex-col sm:flex-row items-start gap-5 sm:gap-8 p-6 sm:p-8 md:p-10 min-h-[220px]">
+                {/* Logo */}
+                <img
+                  src={school.logo}
+                  alt={`${school.name} logo`}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-contain bg-white/10 backdrop-blur-sm border border-white/15 p-2 shrink-0"
+                />
+
+                {/* Info */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
+                    {school.name}
+                  </h3>
+                  <p className="text-sm sm:text-base text-indigo-300/80 mt-1">
+                    {school.degree}
+                  </p>
+
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-3 text-xs sm:text-sm text-slate-400">
+                    <span className="inline-flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400/60" />
+                      GPA: <span className="text-white font-medium">{school.grade}</span>
+                    </span>
+                  </div>
+
+                  <p className="text-sm text-slate-300 leading-relaxed mt-4 max-w-2xl">
+                    {school.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
