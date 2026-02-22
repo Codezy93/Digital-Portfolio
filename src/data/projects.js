@@ -23,7 +23,7 @@ const projects = [
     {
         id: 2,
         name: "Sprout App",
-        image: "/images/sprout.png",
+        image: null,
         description: "Postnatal mental health companion app using AI-driven sentiment monitoring.",
         techStack: ["Flutter", "Python", "AWS", "NLTK"],
         demoUrl: "https://sprout.example.com",
@@ -44,7 +44,7 @@ const projects = [
     {
         id: 3,
         name: "Doctorify App",
-        image: "/images/doctorify.png",
+        image: null,
         description: "A disease detection mobile app designed for underserved and rural areas.",
         techStack: ["Flutter", "Python", "Scikit-learn", "REST API"],
         demoUrl: "https://doctorify.example.com",
@@ -64,13 +64,13 @@ const projects = [
     {
         id: 4,
         name: "Sanvad",
-        image: "/images/sanvad.png",
+        image: null,
         description: "A multilingual conversational chatbot built using LLMs and Indian language models.",
         techStack: ["Python", "Transformers", "Langchain", "HTML", "CSS", "JavaScript"],
         demoUrl: "https://sanvad.example.com",
         githubUrl: "https://github.com/virajparadkar/sanvad",
         htmlContent: `
-        <h2>Sanvad – India’s Multilingual LLM Chatbot</h2>
+        <h2>Sanvad – India's Multilingual LLM Chatbot</h2>
         <p>
             A context-aware conversational agent supporting 6+ Indian languages, built using transformer models and Langchain.
         </p>
@@ -82,6 +82,5 @@ const projects = [
         `,
     },
 ];
-
 
 export default projects;

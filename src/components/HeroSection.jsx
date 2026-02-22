@@ -1,137 +1,168 @@
 'use client';
 
-import DynamicMemoji from "@/components/DynamicMemoji";
-import SplashCursor from "@/components/SplashCursor";
-import socials from "@/data/social";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import React, { useEffect, useState, useRef } from 'react';
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import socials from '@/data/social';
+import { gsap } from 'gsap';
 import { FaLinkedin, FaGithub, FaTwitter, FaKaggle, FaMedium } from 'react-icons/fa';
 
-const homeSkills = [
-    "Artificial Intelligence",
-    "Machine Learning",
-    "Deep Learning",
-    "Data Science",
-    "Computer Vision",
-    "Natural Language Processing",
-    "Reinforcement Learning",
-    "Generative AI",
-    "LLM Provider",
-    "Pattern Recognition",
-    "Data Analytics",
-    "Vector Databases",
-    "Transformers",
-    "RAG",
-    "AI Agents",
-    "Prompt Engineering",
+const NeuralNetworkScene = dynamic(
+    () => import('@/components/three/NeuralNetworkScene'),
+    { ssr: false }
+);
+
+const titles = [
+    'AI/ML Researcher',
+    'Deep Learning Engineer',
+    'Systems Builder',
 ];
 
-const blurb = `I’m a Master’s in AI student at Northeastern University, passionate about building real-world applications of AI/ML. I specialize in turning algorithms into dependable systems, transforming raw data into actionable insights, and going beyond routine automation.`;
+export default function HeroSection() {
+    const sectionRef = useRef(null);
+    const [titleIndex, setTitleIndex] = useState(0);
+    const [displayText, setDisplayText] = useState('');
+    const [isDeleting, setIsDeleting] = useState(false);
 
-function ScrollPrompt() {
-    const [isVisible, setIsVisible] = useState(true);
-
+    // Typewriter effect
     useEffect(() => {
-        const handleScroll = () => {
-        setIsVisible(window.scrollY < 50);
-        };
+        const current = titles[titleIndex];
+        let timeout;
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        if (!isDeleting && displayText.length < current.length) {
+            timeout = setTimeout(() => {
+                setDisplayText(current.slice(0, displayText.length + 1));
+            }, 60);
+        } else if (!isDeleting && displayText.length === current.length) {
+            timeout = setTimeout(() => setIsDeleting(true), 2000);
+        } else if (isDeleting && displayText.length > 0) {
+            timeout = setTimeout(() => {
+                setDisplayText(current.slice(0, displayText.length - 1));
+            }, 30);
+        } else if (isDeleting && displayText.length === 0) {
+            setIsDeleting(false);
+            setTitleIndex((prev) => (prev + 1) % titles.length);
+        }
+
+        return () => clearTimeout(timeout);
+    }, [displayText, isDeleting, titleIndex]);
+
+    // Staggered entrance
+    useEffect(() => {
+        const el = sectionRef.current;
+        if (!el) return;
+
+        const items = el.querySelectorAll('.hero-animate');
+        gsap.fromTo(
+            items,
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.2,
+                ease: 'power3.out',
+                delay: 0.3,
+            }
+        );
     }, []);
 
     return (
-        <div
-        className={`fixed bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center transition-opacity duration-300 z-50 ${
-            isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
+        <section
+            id="hero"
+            ref={sectionRef}
+            className="chapter-section flex items-center justify-center relative"
+            style={{ background: 'var(--bg-deep)' }}
         >
-        <ChevronDown className="w-7 h-7 text-blue-600 animate-bounce bg-blue-100 rounded-4xl" />
-        </div>
-    );
-}
+            <NeuralNetworkScene />
 
-export default function HeroSection() {
-    return (
-        <>
-        <section className="relative w-full h-screen overflow-hidden bg-gradient-to-r from-slate-900 to-black ">
-            <div className="relative w-full h-screen overflow-hidden">
-            <div className="absolute inset-0 opacity-50 z-0 pointer-events-none">
-                <SplashCursor />
-            </div>
-            <div className="relative w-full h-screen overflow-hidden">
-                <div className="relative z-10 flex flex-col items-center justify-start pt-6 h-full text-center gap-3">
-                <h1 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Hey, I&apos;m Viraj</h1>
-
-                <h2 className="text-md sm:text-xl text-gray-300 font-medium">
-                    Master&apos;s in Artificial Intelligence @{" "}
-                    <strong className="text-red-600">Northeastern University</strong>
-                </h2>
-
-                <h3 className="text-sm text-gray-400 hidden sm:block">
-                    VIT Alumnus · 📍 Boston · Open for Summer &rsquo;26 Internships
-                </h3>
-
-                <p className="text-sm sm:text-base text-gray-400 max-w-xl hidden sm:block">
-                    {blurb}
+            <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+                {/* Overline */}
+                <p className="hero-animate text-xs uppercase tracking-[0.4em] text-[var(--accent-blue)] font-mono mb-6 opacity-0">
+                    Portfolio · 2025
                 </p>
 
-                <span className="text-sm rounded-full bg-white px-4 py-1 text-gray-800 hidden sm:inline shadow-md shadow-white/50">
-                    <strong className="text-green-600">🟢</strong> Actively Seeking Applied AI & ML Research Roles
-                </span>
+                {/* Name */}
+                <h1 className="hero-animate text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight mb-4 opacity-0"
+                    style={{
+                        background: 'linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 40%, #60a5fa 100%)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                    }}
+                >
+                    Viraj Paradkar
+                </h1>
 
-                <DynamicMemoji />
+                {/* Typewriter tagline */}
+                <div className="hero-animate h-10 flex items-center justify-center opacity-0">
+                    <p className="text-xl md:text-2xl font-mono text-[var(--text-secondary)]">
+                        {displayText}
+                        <span className="animate-cursor-blink text-[var(--accent-blue)] ml-0.5">|</span>
+                    </p>
+                </div>
 
-                <div className="flex items-center justify-center mt-4 gap-3">
+                {/* Blurb */}
+                <p className="hero-animate text-base md:text-lg lg:text-xl max-w-2xl mx-auto mt-6 leading-relaxed opacity-0 font-medium"
+                    style={{
+                        color: '#e2e8f0',
+                        textShadow: '0 0 30px rgba(96,165,250,0.25), 0 0 60px rgba(96,165,250,0.1)',
+                    }}
+                >
+                    Master&apos;s in AI @ Northeastern University. I build production-grade,
+                    research-driven systems — from real-time detection pipelines to multilingual LLM agents.
+                </p>
+
+                {/* Status badge */}
+                <div className="hero-animate mt-6 opacity-0">
+                    <span className="inline-flex items-center gap-2 text-xs font-mono px-4 py-2 rounded-full border border-[var(--border-accent)] bg-[rgba(96,165,250,0.05)]">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                        <span className="text-[var(--text-secondary)]">Seeking Applied AI & ML Research Roles · Summer &rsquo;26</span>
+                    </span>
+                </div>
+
+                {/* CTAs */}
+                <div className="hero-animate flex items-center justify-center gap-4 mt-8 opacity-0">
                     <Link
-                    href={socials.resume}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-blue-600 text-white hover:bg-blue-700 transition px-4 py-2 rounded-full shadow-md text-sm font-medium"
+                        href={socials.resume}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-3 rounded-lg bg-[var(--accent-blue)] text-[var(--bg-deep)] font-semibold text-sm hover:bg-[#93bbfd] transition-all duration-300 hover:shadow-[0_0_20px_var(--glow-blue)]"
                     >
-                    Resume
+                        Resume
                     </Link>
                     <Link
-                    href="#contact"
-                    className="bg-white text-blue-600 hover:text-blue-800 transition px-4 py-2 rounded-full shadow-md text-sm font-medium"
+                        href="#contact"
+                        className="px-6 py-3 rounded-lg border border-[var(--border-accent)] text-[var(--accent-blue)] font-semibold text-sm hover:bg-[rgba(96,165,250,0.08)] transition-all duration-300"
                     >
-                    Get in Touch
+                        Get in Touch
                     </Link>
                 </div>
-                <div className="flex flex-wrap justify-center items-center gap-2 mt-4 max-w-3xl px-2">
-                    {homeSkills.map((skill, index) => (
-                    <span
-                        key={index}
-                        className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium"
-                    >
-                        {skill}
-                    </span>
+
+                {/* Social row */}
+                <div className="hero-animate flex items-center justify-center gap-5 mt-8 opacity-0">
+                    {[
+                        { href: socials.linkedin, Icon: FaLinkedin },
+                        { href: socials.github, Icon: FaGithub },
+                        { href: socials.twitter, Icon: FaTwitter },
+                        { href: socials.medium, Icon: FaMedium },
+                        { href: socials.kaggle, Icon: FaKaggle },
+                    ].map(({ href, Icon }, i) => (
+                        <Link key={i} href={href} target="_blank" rel="noopener noreferrer"
+                            className="text-[var(--text-muted)] hover:text-[var(--accent-blue)] transition-colors duration-300"
+                        >
+                            <Icon className="w-5 h-5" />
+                        </Link>
                     ))}
                 </div>
-                </div>
-                <div className="absolute flex gap-3 top-3 right-4 z-20">
-                <Link href={socials.linkedin} target="_blank">
-                    <FaLinkedin className="text-white hover:text-slate-500 transition w-5 h-5" />
-                </Link>
-                <Link href={socials.github} target="_blank">
-                    <FaGithub className="text-white hover:text-slate-500 transition w-5 h-5" />
-                </Link>
-                <Link href={socials.twitter} target="_blank">
-                    <FaTwitter className="text-white hover:text-slate-500 transition w-5 h-5" />
-                </Link>
-                <Link href={socials.medium} target="_blank">
-                    <FaMedium className="text-white hover:text-slate-500 transition w-5 h-5" />
-                </Link>
-                <Link href={socials.kaggle} target="_blank">
-                    <FaKaggle className="text-white hover:text-slate-500 transition w-5 h-5" />
-                </Link>
-                </div>
             </div>
-            <ScrollPrompt />
-        </div>
+
+            {/* Scroll indicator */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--text-muted)] font-mono">
+                    Scroll
+                </span>
+                <div className="w-px h-8 bg-gradient-to-b from-[var(--accent-blue)] to-transparent opacity-50" />
+            </div>
         </section>
-        </>
     );
 }

@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import ChapterHeading from "@/components/ChapterHeading";
 import academics from "@/data/academics";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -15,17 +16,15 @@ export default function AcademicSection() {
     const cards = sectionRef.current?.querySelectorAll(".academic-card");
     if (!cards?.length) return;
 
-    cards.forEach((card) => {
-      const image = card.querySelector(".academic-img");
-      const content = card.querySelector(".academic-content");
-
+    cards.forEach((card, i) => {
       gsap.fromTo(
         card,
-        { opacity: 0, y: 50 },
+        { opacity: 0, x: i % 2 === 0 ? -40 : 40, y: 30 },
         {
           opacity: 1,
+          x: 0,
           y: 0,
-          duration: 0.7,
+          duration: 0.9,
           ease: "power3.out",
           scrollTrigger: {
             trigger: card,
@@ -34,120 +33,79 @@ export default function AcademicSection() {
           },
         }
       );
-
-      // Subtle parallax on the background image
-      if (image) {
-        gsap.fromTo(
-          image,
-          { yPercent: -8 },
-          {
-            yPercent: 8,
-            ease: "none",
-            scrollTrigger: {
-              trigger: card,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 0.5,
-            },
-          }
-        );
-      }
     });
   }, { scope: sectionRef });
 
   return (
     <section
+      id="academics"
       ref={sectionRef}
-      className="relative w-full py-20 px-6 md:px-12 lg:px-20 overflow-hidden"
+      className="chapter-section py-24 md:py-32 px-6 md:px-12 lg:px-20"
       style={{
-        background:
-          "radial-gradient(ellipse at 30% 100%, #1e1b4b 0%, #0f0a1a 40%, #050208 100%)",
+        background: 'linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-surface) 50%, var(--bg-deep) 100%)',
       }}
     >
-      {/* Ambient glows */}
-      <div
-        className="pointer-events-none absolute -top-32 left-1/3 w-[500px] h-[500px] rounded-full opacity-[0.07] blur-3xl"
-        style={{
-          background: "radial-gradient(circle, #818cf8, transparent 70%)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute bottom-0 right-10 w-80 h-80 rounded-full opacity-10 blur-3xl"
-        style={{
-          background: "radial-gradient(circle, #c084fc, transparent 70%)",
-        }}
-      />
+      <div className="max-w-5xl mx-auto">
+        <ChapterHeading
+          number="04"
+          title="The Foundation"
+          subtitle="Where it all started — rigorous academics that shaped how I think about computation, data, and intelligence."
+        />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="mb-14">
-          <p className="text-xs uppercase tracking-[0.3em] text-indigo-400/60 mb-2 font-mono">
-            Where I&apos;ve studied
-          </p>
-          <h2
-            className="text-4xl md:text-6xl font-extrabold font-mono tracking-tight"
-            style={{
-              background:
-                "linear-gradient(135deg, #a5b4fc 0%, #c084fc 50%, #f9a8d4 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            Academics
-          </h2>
-        </div>
-
-        {/* Academic cards */}
         <div className="space-y-8">
           {academics.map((school, index) => (
             <div
               key={index}
-              className="academic-card relative rounded-xl overflow-hidden opacity-0"
+              className="academic-card relative rounded-2xl overflow-hidden opacity-0 border border-[var(--border-dim)] hover:border-[var(--border-accent)] transition-all duration-500 group"
+              style={{ background: 'var(--bg-card)' }}
             >
-              {/* Background image with parallax */}
+              {/* Background image overlay */}
               <div className="absolute inset-0 overflow-hidden">
                 <img
                   src={school.image}
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  className="academic-img absolute inset-0 w-full h-full object-cover object-center scale-110"
+                  className="absolute inset-0 w-full h-full object-cover object-center scale-110 opacity-10 group-hover:opacity-[0.15] transition-opacity duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/40" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-card)] via-[var(--bg-card)]/90 to-transparent" />
               </div>
 
               {/* Content */}
-              <div className="academic-content relative z-10 flex flex-col sm:flex-row items-start gap-5 sm:gap-8 p-6 sm:p-8 md:p-10 min-h-[220px]">
+              <div className="relative z-10 flex flex-col sm:flex-row items-start gap-6 sm:gap-8 p-8 md:p-10">
                 {/* Logo */}
                 <img
                   src={school.logo}
                   alt={`${school.name} logo`}
                   loading="lazy"
                   decoding="async"
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-contain bg-white/10 backdrop-blur-sm border border-white/15 p-2 shrink-0"
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-contain bg-white/5 backdrop-blur-sm border border-[var(--border-dim)] p-2 shrink-0"
                 />
 
-                {/* Info */}
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)] leading-tight">
                     {school.name}
                   </h3>
-                  <p className="text-sm sm:text-base text-indigo-300/80 mt-1">
+                  <p className="text-sm sm:text-base text-[var(--accent-blue)] mt-1 font-medium">
                     {school.degree}
                   </p>
 
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-3 text-xs sm:text-sm text-slate-400">
-                    <span className="inline-flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400/60" />
-                      GPA: <span className="text-white font-medium">{school.grade}</span>
+                  <div className="flex items-center gap-3 mt-3">
+                    <span className="inline-flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-lg bg-[rgba(96,165,250,0.08)] border border-[var(--border-accent)] text-[var(--accent-blue)]">
+                      GPA: {school.grade}
                     </span>
                   </div>
 
-                  <p className="text-sm text-slate-300 leading-relaxed mt-4 max-w-2xl">
-                    {school.description}
-                  </p>
+                  {school.description && (
+                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed mt-4 max-w-2xl">
+                      {school.description}
+                    </p>
+                  )}
                 </div>
               </div>
+
+              {/* Accent line */}
+              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--accent-blue)] to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
             </div>
           ))}
         </div>
