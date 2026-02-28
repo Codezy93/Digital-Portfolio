@@ -79,7 +79,7 @@ export default function HeroSection() {
             <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
                 {/* Overline */}
                 <p className="hero-animate text-xs uppercase tracking-[0.4em] text-[var(--accent-blue)] font-mono mb-6 opacity-0">
-                    Portfolio · 2025
+                    Portfolio · 2026
                 </p>
 
                 {/* Name */}
