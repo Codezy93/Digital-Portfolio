@@ -40,73 +40,74 @@ export default function AcademicSection() {
     <section
       id="academics"
       ref={sectionRef}
-      className="chapter-section py-24 md:py-32 px-6 md:px-12 lg:px-20"
-      style={{
-        background: 'linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-surface) 50%, var(--bg-deep) 100%)',
-      }}
+      className="chapter-section section-tone px-6 py-24 md:px-12 md:py-32 lg:px-20"
     >
-      <div className="max-w-5xl mx-auto">
+      <div
+        className="absolute inset-0 pointer-events-none opacity-18"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(148,163,184,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px)",
+          backgroundSize: "44px 44px",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-5xl">
         <ChapterHeading
           number="04"
-          title="The Foundation"
-          subtitle="Where it all started — rigorous academics that shaped how I think about computation, data, and intelligence."
+          title="Academic Foundation"
+          subtitle="Rigorous training that shaped my approach to machine learning, systems thinking, and practical problem-solving."
         />
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {academics.map((school, index) => (
-            <div
+            <article
               key={index}
-              className="academic-card relative rounded-2xl overflow-hidden opacity-0 border border-[var(--border-dim)] hover:border-[var(--border-accent)] transition-all duration-500 group"
-              style={{ background: 'var(--bg-card)' }}
+              className="academic-card surface-card group relative overflow-hidden rounded-2xl opacity-0 transition-all duration-500"
             >
-              {/* Background image overlay */}
               <div className="absolute inset-0 overflow-hidden">
                 <img
                   src={school.image}
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover object-center scale-110 opacity-10 group-hover:opacity-[0.15] transition-opacity duration-700"
+                  className="absolute inset-0 h-full w-full scale-110 object-cover object-center opacity-12 transition-opacity duration-700 group-hover:opacity-18"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-card)] via-[var(--bg-card)]/90 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0d1523] via-[#0d1523]/90 to-transparent" />
               </div>
 
-              {/* Content */}
-              <div className="relative z-10 flex flex-col sm:flex-row items-start gap-6 sm:gap-8 p-8 md:p-10">
-                {/* Logo */}
+              <div className="relative z-10 flex flex-col items-start gap-6 p-8 sm:flex-row sm:gap-8 md:p-10">
                 <img
                   src={school.logo}
                   alt={`${school.name} logo`}
                   loading="lazy"
                   decoding="async"
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-contain bg-white/5 backdrop-blur-sm border border-[var(--border-dim)] p-2 shrink-0"
+                  className="h-16 w-16 shrink-0 rounded-xl border border-slate-200/20 bg-white/8 p-2 object-contain sm:h-20 sm:w-20"
                 />
 
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)] leading-tight">
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-xl font-bold leading-tight text-slate-100 sm:text-2xl">
                     {school.name}
                   </h3>
-                  <p className="text-sm sm:text-base text-[var(--accent-blue)] mt-1 font-medium">
+                  <p className="mt-1 text-sm font-medium text-cyan-100 sm:text-base">
                     {school.degree}
                   </p>
 
-                  <div className="flex items-center gap-3 mt-3">
-                    <span className="inline-flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-lg bg-[rgba(96,165,250,0.08)] border border-[var(--border-accent)] text-[var(--accent-blue)]">
+                  <div className="mt-3 flex items-center gap-3">
+                    <span className="inline-flex items-center gap-2 rounded-lg border border-cyan-200/35 bg-cyan-200/10 px-3 py-1.5 text-xs font-mono text-cyan-100">
                       GPA: {school.grade}
                     </span>
                   </div>
 
                   {school.description && (
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed mt-4 max-w-2xl">
+                    <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-300">
                       {school.description}
                     </p>
                   )}
                 </div>
               </div>
 
-              {/* Accent line */}
-              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--accent-blue)] to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
-            </div>
+              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-200/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-30" />
+            </article>
           ))}
         </div>
       </div>

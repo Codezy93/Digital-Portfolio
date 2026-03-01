@@ -61,19 +61,25 @@ export default function SkillsSection() {
     <section
       id="skills"
       ref={sectionRef}
-      className="chapter-section py-24 md:py-32 px-6 md:px-12 lg:px-20"
-      style={{
-        background: 'linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-surface) 50%, var(--bg-deep) 100%)',
-      }}
+      className="chapter-section section-tone px-6 py-24 md:px-12 md:py-32 lg:px-20"
     >
-      <div className="max-w-6xl mx-auto">
+      <div
+        className="absolute inset-0 pointer-events-none opacity-25"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(148,163,184,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px)',
+          backgroundSize: '42px 42px',
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         <ChapterHeading
           number="01"
           title="The Toolkit"
-          subtitle="A curated set of technologies, frameworks, and paradigms — selected not for breadth, but for depth and production impact."
+          subtitle="A focused set of technologies selected for depth, reliability, and measurable production impact."
         />
 
-        <div className="space-y-12">
+        <div className="space-y-8">
           {categories.map((category) => {
             const entries = Object.entries(skills[category]).filter(
               ([skill]) => skill !== ''
@@ -81,35 +87,28 @@ export default function SkillsSection() {
             if (entries.length === 0) return null;
 
             return (
-              <div key={category} className="skill-group">
-                {/* Category heading */}
-                <div className="skill-heading flex items-center gap-4 mb-5 opacity-0">
-                  <h3 className="text-sm md:text-base font-bold font-mono uppercase tracking-wider text-[var(--text-secondary)] shrink-0">
+              <div key={category} className="skill-group surface-card rounded-2xl p-6 md:p-8">
+                <div className="skill-heading mb-5 flex items-center gap-4 opacity-0">
+                  <h3 className="shrink-0 text-sm font-bold font-mono uppercase tracking-[0.18em] text-slate-200 md:text-base">
                     {category}
                   </h3>
-                  <span className="text-[10px] font-mono text-[var(--text-muted)] px-2 py-0.5 rounded-full border border-[var(--border-dim)]">
+                  <span className="rounded-full border border-slate-300/20 px-2 py-0.5 text-[10px] font-mono text-slate-400">
                     {entries.length}
                   </span>
-                  <div className="flex-1 h-px bg-gradient-to-r from-[var(--border-dim)] to-transparent" />
+                  <div className="h-px flex-1 bg-gradient-to-r from-slate-300/25 to-transparent" />
                 </div>
 
-                {/* Skill badges */}
                 <div className="flex flex-wrap gap-2.5">
                   {entries.map(([skill, imageUrl]) => (
                     <span
                       key={skill}
-                      className="skill-badge inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm font-medium
-                        bg-[var(--bg-card)] border border-[var(--border-dim)]
-                        text-[var(--text-secondary)]
-                        hover:bg-[rgba(96,165,250,0.06)] hover:border-[var(--border-accent)] hover:text-[var(--text-primary)]
-                        hover:shadow-[0_0_15px_var(--glow-blue)]
-                        transition-all duration-300 cursor-default opacity-0"
+                      className="skill-badge inline-flex cursor-default items-center gap-2.5 rounded-lg border border-slate-300/15 bg-slate-200/10 px-4 py-2.5 text-sm font-medium text-slate-300 opacity-0 transition-all duration-300 hover:border-cyan-200/45 hover:bg-cyan-200/10 hover:text-slate-100 hover:shadow-[0_8px_25px_rgba(56,189,248,0.2)]"
                     >
                       {imageUrl && (
                         <img
                           src={`/icons/${imageUrl}.svg`}
                           alt={skill}
-                          className="w-4 h-4 shrink-0 opacity-70"
+                          className="h-4 w-4 shrink-0 opacity-80"
                           loading="lazy"
                         />
                       )}

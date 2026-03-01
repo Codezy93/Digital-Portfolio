@@ -51,105 +51,106 @@ export default function ExperienceSection() {
     <section
       id="experience"
       ref={sectionRef}
-      className="chapter-section py-24 md:py-32 px-6 md:px-12 lg:px-20 relative"
-      style={{
-        background: 'linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-surface) 50%, var(--bg-deep) 100%)',
-      }}
+      className="chapter-section section-tone relative px-6 py-24 md:px-12 md:py-32 lg:px-20"
     >
       <ParticleField />
 
-      <div className="relative z-10 max-w-5xl mx-auto">
+      <div
+        className="absolute inset-0 pointer-events-none opacity-20"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(148,163,184,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px)',
+          backgroundSize: '44px 44px',
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-5xl">
         <ChapterHeading
           number="03"
-          title="Into the Field"
-          subtitle="Production deployments, real-time pipelines, and measurable impact — where research meets reality."
+          title="Experience"
+          subtitle="Production deployments, real-time pipelines, and measurable outcomes where research ideas become reliable software."
         />
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {experienceData.map((exp) => (
-            <div
+            <article
               key={exp.id}
-              className="exp-card opacity-0 rounded-2xl border border-[var(--border-dim)] hover:border-[var(--border-accent)] p-8 md:p-10 transition-all duration-500 cursor-pointer group"
-              style={{ background: 'var(--bg-card)' }}
+              className="exp-card surface-card group cursor-pointer rounded-2xl p-7 opacity-0 transition-all duration-500 md:p-9"
               onClick={() => openDetails(exp)}
             >
-              <div className="flex flex-col sm:flex-row items-start gap-6">
-                {/* Company logo */}
+              <div className="flex flex-col items-start gap-6 sm:flex-row">
                 {exp.logo && (
                   <img
                     src={exp.logo}
                     alt={exp.company}
-                    className="w-14 h-14 rounded-xl object-contain bg-white/5 border border-[var(--border-dim)] p-2 shrink-0"
+                    className="h-14 w-14 shrink-0 rounded-xl border border-slate-200/20 bg-white/8 p-2 object-contain"
                   />
                 )}
 
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)]">
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-xl font-bold text-slate-100 sm:text-2xl">
                     {exp.role}
                   </h3>
-                  <p className="text-base text-[var(--accent-blue)] font-medium mt-1">
+                  <p className="mt-1 text-base font-medium text-cyan-100">
                     {exp.company}
                   </p>
 
-                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-3 text-sm text-[var(--text-muted)]">
+                  <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-400">
                     <span className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5" />
+                      <Clock className="h-3.5 w-3.5" />
                       {exp.duration}
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5" />
+                      <MapPin className="h-3.5 w-3.5" />
                       {exp.location}
                     </span>
                   </div>
 
-                  <p className="text-sm text-[var(--text-secondary)] mt-4 leading-relaxed">
+                  <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-300">
                     {exp.description}
                   </p>
 
-                  {/* Tech stack pills */}
-                  <div className="flex flex-wrap gap-2 mt-5">
+                  <div className="mt-5 flex flex-wrap gap-2">
                     {exp.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="text-[11px] font-mono px-3 py-1 rounded-md bg-[rgba(96,165,250,0.06)] border border-[var(--border-dim)] text-[var(--text-muted)]"
+                        className="rounded-md border border-slate-200/20 bg-slate-200/10 px-3 py-1 text-[11px] font-mono text-slate-300"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  {/* View details hint */}
-                  <p className="text-xs text-[var(--text-muted)] mt-5 opacity-0 group-hover:opacity-100 transition-opacity font-mono">
-                    Click to expand impact details →
+                  <p className="mt-5 text-[10px] font-mono uppercase tracking-[0.16em] text-slate-400 transition-colors duration-300 group-hover:text-slate-200">
+                    Open impact breakdown
                   </p>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
 
-      {/* Detail Modal */}
-      <Dialog open={!!selectedExp} onOpenChange={closeDetails}>
-        <DialogContent className="max-w-2xl bg-[var(--bg-card)] border-[var(--border-dim)] text-[var(--text-primary)] max-h-[80vh] overflow-y-auto">
+      <Dialog open={!!selectedExp} onOpenChange={(open) => !open && closeDetails()}>
+        <DialogContent className="max-h-[82vh] max-w-2xl overflow-y-auto rounded-2xl border-slate-300/20 bg-slate-900/85 text-slate-100 backdrop-blur-md">
           {selectedExp && (
             <>
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold">
                   {selectedExp.role}
                 </DialogTitle>
-                <DialogDescription className="text-[var(--accent-blue)]">
-                  {selectedExp.company} · {selectedExp.duration}
+                <DialogDescription className="text-cyan-100">
+                  {selectedExp.company} - {selectedExp.duration}
                 </DialogDescription>
               </DialogHeader>
 
-              <div className="space-y-5 mt-4">
+              <div className="mt-4 space-y-5">
                 {selectedExp.impact?.map((item, i) => (
-                  <div key={i} className="border-l-2 border-[var(--accent-blue)] pl-4">
-                    <h4 className="text-sm font-bold text-[var(--text-primary)] mb-1">
+                  <div key={i} className="border-l-2 border-cyan-200/70 pl-4">
+                    <h4 className="mb-1 text-sm font-bold text-slate-100">
                       {item.imhead}
                     </h4>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    <p className="text-sm leading-relaxed text-slate-300">
                       {item.imdesc}
                     </p>
                   </div>

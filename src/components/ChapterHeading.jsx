@@ -35,25 +35,18 @@ export default function ChapterHeading({ number, title, subtitle }) {
 
     return (
         <div ref={ref} className="mb-16 md:mb-20">
-            <p className="ch-animate text-xs uppercase tracking-[0.35em] text-[var(--accent-blue)] font-mono mb-3 opacity-70">
+            <p className="ch-animate eyebrow-label mb-4">
                 Chapter {number}
             </p>
-            <h2
-                className="ch-animate text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]"
-                style={{
-                    background: 'linear-gradient(135deg, #f1f5f9 0%, #94a3b8 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                }}
-            >
+            <h2 className="ch-animate max-w-4xl text-[clamp(2.2rem,6.3vw,5.3rem)] font-black leading-[0.95] tracking-[-0.03em] text-slate-100">
                 {title}
             </h2>
             {subtitle && (
-                <p className="ch-animate text-base md:text-lg text-[var(--text-secondary)] mt-4 max-w-2xl font-light">
+                <p className="ch-animate mt-4 max-w-3xl text-base leading-relaxed text-slate-300 md:text-lg">
                     {subtitle}
                 </p>
             )}
-            <div className="ch-animate glow-line w-24 mt-6" />
+            <div className="ch-animate mt-6 glow-line w-28" />
         </div>
     );
 }
