@@ -1,0 +1,296 @@
+{
+  "site": {
+    "title": "Viraj Paradkar — AI/ML Engineer",
+    "favicon": "/favicon.svg",
+    "model": "/bot.glb"
+  },
+  "theme": {
+    "ink": "#0a0e14",
+    "paper": "#fafbfc",
+    "accent": "#c25a23"
+  },
+  "nav": {
+    "logo": "V",
+    "name": "Viraj Paradkar",
+    "kicker": "© / PORTFOLIO 26",
+    "links": [
+      { "label": "Home", "id": "home" },
+      { "label": "Work", "id": "work" },
+      { "label": "Stack", "id": "stack" },
+      { "label": "Experience", "id": "experience" },
+      { "label": "Education", "id": "foundation" },
+      { "label": "Contact", "id": "connect" }
+    ],
+    "cta": { "label": "Résumé", "href": "https://docs.google.com/document/d/1Kyl_4JIYPb6xZMTNUFINtGHqncy316W2IeCe5Mt3pZA/edit?usp=sharing" }
+  },
+  "person": {
+    "name": "Viraj Paradkar",
+    "role": "AI/ML Engineer",
+    "email": "virajsparadkar@gmail.com",
+    "phone": "(617) 331-9680",
+    "location": "Boston, MA",
+    "availability": "AVAILABLE / SUMMER 2026",
+    "timezone": "America/New_York",
+    "timezoneLabel": "BOS",
+    "resume": "https://docs.google.com/document/d/1Kyl_4JIYPb6xZMTNUFINtGHqncy316W2IeCe5Mt3pZA/edit?usp=sharing"
+  },
+  "ticker": [
+    "VIRAJ PARADKAR",
+    "AI/ML ENGINEER",
+    "MS AI · NORTHEASTERN",
+    "PORTFOLIO / 2026",
+    "AVAILABLE FOR SUMMER 2026",
+    "PRODUCTION COMPUTER VISION",
+    "RETRIEVAL SYSTEMS · LLMs",
+    "MEDICAL IMAGING · 3D SEGMENTATION",
+    "MLOps · AWS",
+    "—"
+  ],
+  "hero": {
+    "eyebrow": "— PORTFOLIO / 2026 · 001",
+    "headline": { "line1": "Viraj", "line2": "Paradkar" },
+    "role": { "pre": "AI / ML", "accent": "Engineer", "dot": "." },
+    "intro": {
+      "before": "M.S. in Artificial Intelligence at",
+      "highlight": "Northeastern",
+      "after": ". I ship production ML — real-time YOLOv8 across 120 cameras at 99.98% uptime, 3D medical segmentation with uncertainty quantification, and local-first retrieval systems with formal evaluation harnesses."
+    },
+    "ctas": [
+      { "label": "View work", "id": "work", "icon": "down", "variant": "primary" },
+      { "label": "Email", "href": "mailto:virajsparadkar@gmail.com", "icon": "mail", "variant": "secondary" },
+      { "label": "GitHub", "href": "https://github.com/Codezy93", "icon": "github", "variant": "secondary" },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/viraj-paradkar/", "icon": "linkedin", "variant": "secondary" },
+      { "label": "Résumé", "href": "https://docs.google.com/document/d/1Kyl_4JIYPb6xZMTNUFINtGHqncy316W2IeCe5Mt3pZA/edit?usp=sharing", "icon": "doc", "variant": "secondary" }
+    ],
+    "modelLabels": { "left": "ANIMATED RIG · GLB", "right": "BOSTON · MA" },
+    "modelSkipStart": 10
+  },
+  "stats": [
+    { "v": "3.68",  "l": "GPA · MSAI · NEU" },
+    { "v": "120",  "l": "CAMERAS · LIVE CV PIPELINE" },
+    { "v": "0.81", "l": "DICE · 3D BRAIN SEGMENTATION" },
+    { "v": "0.74", "l": "MRR · RETRIEVAL EVAL" }
+  ],
+  "index": {
+    "items": [
+      { "n": "01", "t": "SELECTED WORK",   "m": "08 PROJECTS",        "id": "work" },
+      { "n": "02", "t": "STACK & TOOLKIT", "m": "45+ TECHS",          "id": "stack" },
+      { "n": "03", "t": "EXPERIENCE",      "m": "MOBINEXT AI · 2024", "id": "experience" },
+      { "n": "04", "t": "EDUCATION",       "m": "NEU · VIT",          "id": "foundation" },
+      { "n": "05", "t": "CONTACT",         "m": "OPEN FOR ROLES",     "id": "connect" }
+    ],
+    "status": {
+      "label": "— CURRENT STATUS",
+      "headline": "Open for",
+      "headlineAccent": "Summer 2026",
+      "rows": [
+        { "k": "Role",     "v": "AI/ML Engineer · Intern" },
+        { "k": "Focus",    "v": "Computer Vision · LLMs · MLOps" },
+        { "k": "Location", "v": "Boston, MA · Open to relocate" },
+        { "k": "Now",      "v": "M.S. AI @ Northeastern · 2nd year" }
+      ],
+      "cta": { "label": "Get in touch", "id": "connect" }
+    }
+  },
+  "work": {
+    "id": "work",
+    "chapter": "— CHAPTER 01 / SELECTED WORK",
+    "heading": { "pre": "Things I've", "accent": "shipped", "post": "." },
+    "sub": "Production-focused projects where model quality, system reliability, and product usefulness are all first-class constraints.",
+    "ctaAll": {
+      "label": "See all projects on GitHub",
+      "meta": "VIEW REPOSITORIES",
+      "href": "https://github.com/Codezy93?tab=repositories",
+      "icon": "github"
+    },
+    "projects": [
+      {
+        "id": "neuromap", "num": "01", "year": "2025",
+        "title": "NeuroMap", "tag": "Medical Imaging · 3D Segmentation",
+        "blurb": "3D brain-tumor segmentation with voxel-level uncertainty quantification — 0.81 Dice with Monte Carlo Dropout entropy maps for safer clinical review.",
+        "stack": ["PyTorch", "MONAI", "FastAPI", "Next.js", "Plotly", "W&B"],
+        "thumb": "vision",
+        "details": {
+          "role": "Solo build", "duration": "Ongoing", "team": "1",
+          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
+          "problem": "Standard 3D segmentation models output deterministic masks, leaving clinicians no signal about where the model is uncertain — a problem at tumor boundaries where errors matter most. Volumes also exceed single-pass GPU memory, making naive inference infeasible.",
+          "approach": "Built a 3D U-Net inference pipeline using MONAI sliding-window patching with mixed precision to handle 4-channel NIfTI volumes on a single GPU. Replaced deterministic outputs with Monte Carlo Dropout, running multiple stochastic forward passes per volume to compute voxel-level entropy and variance. Wrapped the model in a FastAPI inference service with a Next.js client for interactive 3D point-cloud reconstruction and slice-by-slice overlays.",
+          "results": "Achieved 0.81 validation Dice while delivering interpretable uncertainty maps that highlight high-risk tumor edges. End-to-end inference runs on a single GPU; the web UI makes results inspectable for non-technical reviewers."
+        }
+      },
+      {
+        "id": "secondbrain", "num": "02", "year": "2025",
+        "title": "Second Brain", "tag": "Retrieval · Local LLMs",
+        "blurb": "Local-first RAG over a 500-document Obsidian vault. 0.74 MRR, 88% top-3, 96% top-5 across 84 evaluation queries — measured, not vibes.",
+        "stack": ["Python", "Ollama", "ChromaDB", "FastAPI", "LangChain", "sentence-transformers"],
+        "thumb": "waves",
+        "details": {
+          "role": "Solo build", "duration": "Ongoing", "team": "1",
+          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
+          "problem": "Personal knowledge bases are valuable enough that I didn't want them flowing through third-party inference APIs. And LLM-on-notes tools are usually evaluated by gut feel — not a real basis for iterating on retrievers.",
+          "approach": "Built a fully local retrieval system over an Obsidian vault using Ollama for inference and ChromaDB for vector search with nomic-embed-text embeddings. Designed a FastAPI backend with streaming SSE responses and source attribution so every answer carries citation links back to the source notes. Wrote a formal evaluation harness with 84 labeled queries spanning 20 domains, measuring top-k hit rate and MRR to enable reproducible comparisons across embedding models and chunking strategies.",
+          "results": "0.74 MRR, 88% top-3 hit rate, 96% top-5 hit rate over a 500-document corpus. Every response is grounded with source citations, and the eval harness lets me swap retrievers and measure the delta instead of guessing."
+        }
+      },
+      {
+        "id": "glassbox", "num": "03", "year": "2025",
+        "title": "GlassBox", "tag": "XAI · Algorithmic Compliance",
+        "blurb": "Credit-default system built around algorithmic trust — Explainable Boosting Machine, DiCE counterfactuals verified by Z3, conformal prediction bounds.",
+        "stack": ["PyTorch", "FastAPI", "React", "DiCE", "InterpretML", "Z3 Solver"],
+        "thumb": "sentiment",
+        "details": {
+          "role": "Solo build", "duration": "2 months", "team": "1",
+          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
+          "problem": "Credit-default models that beat baselines on AUC are useless in regulated settings if you can't explain a denial or give applicants a path to approval. Most XAI tooling produces post-hoc rationalizations rather than mathematically sound recourse.",
+          "approach": "Trained an Explainable Boosting Machine as the core classifier, prioritizing interpretability over deep-learning AUC. Built an automated recourse engine using DiCE for counterfactual generation and Z3 formal verification to guarantee the counterfactuals are actually feasible. Layered on a governance suite with Demographic Parity fairness audits, Split Conformal Prediction bounds, and stability simulations for drift and privacy budgets (epsilon=1.0).",
+          "results": "Achieved 0.8961 AUC, beating standard deep-learning baselines on this task. Every prediction ships with a fairness check, calibrated uncertainty bound, and a verified counterfactual the user can act on."
+        }
+      },
+      {
+        "id": "mintsage", "num": "04", "year": "2025",
+        "title": "Mint Sage", "tag": "Applied ML · Full-Stack",
+        "blurb": "AI personal-finance assistant with a hybrid ML + rule-based pipeline for noisy transaction text. 92% categorization accuracy on real bank data.",
+        "stack": ["Python", "Scikit-Learn", "Node.js", "React", "Next.js", "Supabase"],
+        "thumb": "bloom",
+        "details": {
+          "role": "Solo build", "duration": "6 weeks", "team": "1",
+          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
+          "problem": "Bank transaction strings are noisy and adversarial — pure ML classifiers misclassify high-stakes edge cases (rent, taxes, transfers) that users won't tolerate getting wrong, and pure rule-based systems can't keep up with merchant-name drift.",
+          "approach": "Built a hybrid pipeline combining supervised classification with a rule-based fallback for business-critical categories. Layered in time-series forecasting for spending trends and projected cash flow, surfaced as plain-language insights. Shipped the full stack on React/Next.js with a Node.js backend and Supabase for data and auth.",
+          "results": "92% categorization accuracy on labeled transaction data. Users get automated expense categorization, anomaly alerts, and forecast-driven cash-flow insights without manual tracking."
+        }
+      },
+      {
+        "id": "stockmonk", "num": "05", "year": "2023",
+        "title": "Stock Monk", "tag": "NLP · Time Series",
+        "blurb": "LSTM + NLP stock-price predictor that fuses news/social sentiment with historical OHLCV trends.",
+        "stack": ["Python", "TensorFlow", "Keras"],
+        "thumb": "sentiment",
+        "details": {
+          "role": "Solo build", "duration": "3 months", "team": "1",
+          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
+          "problem": "Equity prediction models that ignore market sentiment miss the dominant short-term signal. The challenge was fusing news/social sentiment with historical price action without the sentiment channel drowning out the time-series.",
+          "approach": "Trained an LSTM on multi-year OHLCV data, fine-tuned a transformer on financial news for sentiment, and concatenated the sentiment embedding with price features at the LSTM input. Used walk-forward validation across market regimes.",
+          "results": "Outperformed price-only baseline by ~12% MAPE on held-out windows. Pipeline runs nightly and emits a daily forecast bundle."
+        }
+      },
+      {
+        "id": "sanvad", "num": "06", "year": "2023",
+        "title": "Sanvad", "tag": "Multilingual LLM",
+        "blurb": "Multilingual conversational chatbot built on LLMs and Indic-language models, robust to code-mixed Hinglish.",
+        "stack": ["Python", "Transformers", "LangChain"],
+        "thumb": "waves",
+        "details": {
+          "role": "ML Engineer", "duration": "3 months", "team": "2",
+          "links": [],
+          "problem": "Most chatbots collapse on Indic-language inputs, especially code-mixed Hinglish, because the tokenizers and retrievers were never trained for it.",
+          "approach": "Routed inputs through language ID, used Indic-tuned encoders for retrieval, and wrapped generation in a LangChain agent that fell back to translation when confidence was low.",
+          "results": "Stable conversational quality across English, Hindi, and code-mixed inputs in user testing."
+        }
+      },
+      {
+        "id": "doctorify", "num": "07", "year": "2022",
+        "title": "Doctorify", "tag": "Healthcare CV",
+        "blurb": "Mobile-first disease-triage app for underserved and rural communities.",
+        "stack": ["Flutter", "Python", "Scikit"],
+        "thumb": "vision",
+        "details": {
+          "role": "Lead", "duration": "5 months", "team": "4",
+          "links": [],
+          "problem": "Rural patients lack access to specialists for triage of common dermatological and ophthalmological conditions.",
+          "approach": "Built a Flutter UI for on-device image capture, server-side classifiers (Scikit + CV) trained on public condition datasets, and a triage flow that escalated urgent cases to clinicians.",
+          "results": "Demoed live triage across three condition classes and reached early clinical advisors for feedback."
+        }
+      },
+      {
+        "id": "sprout", "num": "08", "year": "2023",
+        "title": "Sprout", "tag": "Healthcare AI",
+        "blurb": "Postnatal mental-health companion using AI-driven sentiment monitoring with a clinician dashboard.",
+        "stack": ["Flutter", "Python", "AWS"],
+        "thumb": "bloom",
+        "details": {
+          "role": "ML + Backend", "duration": "4 months", "team": "3",
+          "links": [],
+          "problem": "Postpartum mental-health symptoms often go undetected because there's no low-friction way for new parents to journal and surface concerning patterns to clinicians.",
+          "approach": "Flutter app for daily voice/text journaling, Python backend with a fine-tuned sentiment model, AWS deployment, and a clinician dashboard for trend review.",
+          "results": "Pilot ran with a small cohort. Sentiment trends correlated with self-reported PHQ-9 deltas across the cohort."
+        }
+      }
+    ]
+  },
+  "stack": {
+    "id": "stack",
+    "chapter": "— CHAPTER 02 / THE STACK",
+    "heading": { "pre": "What I", "accent": "build", "post": " with." },
+    "sub": "A focused set of technologies selected for depth and measurable production impact — from PyTorch research to AWS inference at scale.",
+    "ctaAll": {
+      "label": "View certifications",
+      "meta": "AWS · COURSERA · DEEPLEARNING.AI",
+      "href": "https://www.linkedin.com/in/viraj-paradkar/details/certifications/",
+      "icon": "cert"
+    },
+    "groups": [
+      { "group": "AI / ML Frameworks", "items": ["PyTorch","TensorFlow","Keras","Scikit-Learn","XGBoost","MONAI","Transformers","LangChain","sentence-transformers","Ultralytics/YOLOv8"] },
+      { "group": "ML Systems",         "items": ["Mixed Precision (AMP)","Sliding-Window Inference","Monte Carlo Dropout","RAG","Vector Search","Retrieval Eval (MRR, top-k)","Augmentation Pipelines","Conformal Prediction"] },
+      { "group": "Data & Viz",         "items": ["Pandas","NumPy","OpenCV","Matplotlib","Plotly","Jupyter","Streamlit","Power BI"] },
+      { "group": "Web & App",          "items": ["React","Next.js","Node.js","FastAPI","Flask","Express","Tailwind","Electron","Supabase"] },
+      { "group": "Languages",          "items": ["Python","C++","TypeScript","JavaScript","SQL","Bash","Java","HTML","CSS"] },
+      { "group": "Cloud & MLOps",      "items": ["AWS","SageMaker","EC2","S3","EKS","Lambda","API Gateway","Docker","MLflow","CI/CD","Git","Linux","W&B"] },
+      { "group": "Data Stores",        "items": ["PostgreSQL","MySQL","MongoDB","ChromaDB","Redis","Kafka","Snowflake","Cassandra","Firebase"] },
+      { "group": "Tools",              "items": ["Postman","Figma","Selenium","Grafana","GitHub Actions"] }
+    ]
+  },
+  "experience": {
+    "id": "experience",
+    "chapter": "— CHAPTER 03 / EXPERIENCE",
+    "heading": { "pre": "Where I've", "accent": "worked", "post": "." },
+    "sub": "Production deployments, real-time pipelines, and measurable outcomes where research ideas become reliable software.",
+    "items": [
+      {
+        "from": "Jan 2024",
+        "to": "Apr 2024",
+        "title": "AI Engineering Intern",
+        "org": "MobiNext Technologies",
+        "loc": "Navi Mumbai, IN",
+        "blurb": "Owned the production CV pipeline behind MobiNext's surveillance ecosystem — from model fine-tuning to AWS deployment to operator-facing tools.",
+        "highlights": [
+          "Architected a modular AWS infrastructure (EC2, S3, EKS, Lambda, API Gateway) serving real-time YOLOv8 inference across 120 IP cameras at 12 sites, hitting 99.98% uptime under sustained load.",
+          "Fine-tuned four YOLOv8 detection models with custom PyTorch training pipelines, improving mAP by 20.3% and cutting false positives by 60% on held-out evaluation sets.",
+          "Lifted night-time detection accuracy by 35% via CLAHE preprocessing and HSV color-space augmentations — preprocessing-driven gains where retraining was infeasible.",
+          "Rebuilt the operator ROI-selection tool in React after watching site staff struggle with the original CLI workflow, eliminating engineering support for routine camera reconfigurations."
+        ],
+        "stack": ["Python","PyTorch","Ultralytics/YOLOv8","Flask","OpenCV","React","AWS EC2","AWS S3","AWS EKS","AWS Lambda","AWS API Gateway","Docker"]
+      }
+    ]
+  },
+  "education": {
+    "id": "foundation",
+    "chapter": "— CHAPTER 04 / EDUCATION",
+    "heading": { "pre": "Academic", "accent": "foundation", "post": "." },
+    "sub": "Rigorous training that shaped my approach to ML, systems thinking, and practical problem-solving.",
+    "items": [
+      { "from": "Sept 2025", "to": "Dec 2027", "degree": "M.S. in Artificial Intelligence",        "org": "Northeastern University · Khoury College of Computer Sciences", "loc": "Boston, MA",  "gpa": "3.5 / 4.0",  "notes": "Coursework in Deep Learning, Information Theory, Optimization, and ML Systems." },
+      { "from": "Sept 2020", "to": "Oct 2024",  "degree": "B.Tech · Computer Science & Engineering", "org": "Vellore Institute of Technology · SCOPE",                        "loc": "Vellore, IN", "gpa": "8.17 / 10",   "notes": "Focused on CS fundamentals with hands-on work through the Linux, SDE, and Health Informatics Clubs." }
+    ]
+  },
+  "contact": {
+    "id": "connect",
+    "chapter": "— CHAPTER 05 / GET IN TOUCH",
+    "heading": { "line1Pre": "Let's", "line1Accent": "build", "line2": "something", "line3": "together", "dot": "." },
+    "emailLabel": "— EMAIL ME AT",
+    "email": "virajsparadkar@gmail.com",
+    "phoneLabel": "— OR CALL",
+    "phone": "(617) 331-9680",
+    "elsewhereLabel": "— ELSEWHERE",
+    "elsewhere": [
+      { "k": "GitHub",      "v": "Codezy93",        "h": "https://github.com/Codezy93" },
+      { "k": "LinkedIn",    "v": "viraj-paradkar",  "h": "https://www.linkedin.com/in/viraj-paradkar/" },
+      { "k": "X · Twitter", "v": "@Codezy93",       "h": "https://x.com/Codezy93" },
+      { "k": "Kaggle",      "v": "virajparadkar",   "h": "https://www.kaggle.com/virajparadkar" },
+      { "k": "Medium",      "v": "@virajparadkar",  "h": "https://medium.com/@virajparadkar" }
+    ]
+  },
+  "footer": {
+    "left": "© 2026 / VIRAJ PARADKAR / ALL RIGHTS RESERVED"
+  }
+}

@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+html, body { margin: 0; padding: 0; background: #fafaf9; }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: "Inter Tight", -apple-system, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root { width: 100%; min-height: 100vh; }

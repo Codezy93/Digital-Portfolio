@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Viraj Paradkar · Portfolio — 3 Directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin:0; padding:0; background:#f0eee9; }
+  *, *::before, *::after { box-sizing: border-box; }
+  body { font-family: "Inter Tight", -apple-system, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="shared-ui.jsx"></script>
+<script type="text/babel" src="skill-icons.jsx"></script>
+<script type="text/babel" src="direction-safe.jsx"></script>
+<script type="text/babel" src="direction-bold.jsx"></script>
+<script type="text/babel" src="direction-experimental.jsx"></script>
+
+<script type="text/babel">
+
+function App() {
+  const [modal, setModal] = React.useState(null);
+  const [cmdOpen, setCmdOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const k = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setCmdOpen(true);
+      }
+    };
+    window.addEventListener('keydown', k);
+    return () => window.removeEventListener('keydown', k);
+  }, []);
+
+  const [focusDir, setFocusDir] = React.useState(null);
+
+  const handleSwitch = (dir) => {
+    // focus the artboard for this direction
+    const slot = `directions/${dir}`;
+    // we'll trigger focus via a custom event the canvas listens to — simpler: just dispatch a click
+    const grid = { safe: 'directions/safe', bold: 'directions/bold', experimental: 'directions/experimental' };
+    window.dispatchEvent(new CustomEvent('dc-focus', { detail: grid[dir] }));
+  };
+
+  const Shell = ({ children }) => (
+    <div style={{ width: '100%', height: '100%', position: 'relative', background: '#fafaf9', overflow: 'hidden' }}>
+      {children}
+    </div>
+  );
+
+  return (
+    <>
+      <DesignCanvas>
+        <DCSection id="directions" title="Viraj Paradkar · Portfolio" subtitle="Three directions. Drag labels to reorder. Click the ↗ icon (top-right of any card) or double-click a label to open fullscreen. Press ⌘K inside any direction for command palette.">
+          <DCArtboard id="safe" label="A · Safe — Product-polished" width={1280} height={820}>
+            <Shell>
+              <SafeDirection onOpenProject={setModal} onOpenCommand={() => setCmdOpen(true)} />
+            </Shell>
+          </DCArtboard>
+          <DCArtboard id="bold" label="B · Bold — Editorial" width={1280} height={820}>
+            <Shell>
+              <BoldDirection onOpenProject={setModal} onOpenCommand={() => setCmdOpen(true)} />
+            </Shell>
+          </DCArtboard>
+          <DCArtboard id="experimental" label="C · Experimental — Research lab" width={1280} height={820}>
+            <Shell>
+              <ExperimentalDirection onOpenProject={setModal} onOpenCommand={() => setCmdOpen(true)} />
+            </Shell>
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+
+      <ProjectModal project={modal} onClose={() => setModal(null)} />
+      <CommandPalette
+        open={cmdOpen}
+        onClose={() => setCmdOpen(false)}
+        onOpenProject={setModal}
+        onSwitchDirection={handleSwitch}
+      />
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
