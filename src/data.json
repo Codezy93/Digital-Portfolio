@@ -109,7 +109,7 @@
         "title": "NeuroMap", "tag": "Medical Imaging · 3D Segmentation",
         "blurb": "3D brain-tumor segmentation with voxel-level uncertainty quantification — 0.81 Dice with Monte Carlo Dropout entropy maps for safer clinical review.",
         "stack": ["PyTorch", "MONAI", "FastAPI", "Next.js", "Plotly", "W&B"],
-        "thumb": "vision",
+        "thumb": "/neuromap.png",
         "details": {
           "role": "Solo build", "duration": "Ongoing", "team": "1",
           "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
@@ -123,7 +123,7 @@
         "title": "Second Brain", "tag": "Retrieval · Local LLMs",
         "blurb": "Local-first RAG over a 500-document Obsidian vault. 0.74 MRR, 88% top-3, 96% top-5 across 84 evaluation queries — measured, not vibes.",
         "stack": ["Python", "Ollama", "ChromaDB", "FastAPI", "LangChain", "sentence-transformers"],
-        "thumb": "waves",
+        "thumb": "/secondbrain.png",
         "details": {
           "role": "Solo build", "duration": "Ongoing", "team": "1",
           "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
@@ -137,7 +137,7 @@
         "title": "GlassBox", "tag": "XAI · Algorithmic Compliance",
         "blurb": "Credit-default system built around algorithmic trust — Explainable Boosting Machine, DiCE counterfactuals verified by Z3, conformal prediction bounds.",
         "stack": ["PyTorch", "FastAPI", "React", "DiCE", "InterpretML", "Z3 Solver"],
-        "thumb": "sentiment",
+        "thumb": "/glassbox.png",
         "details": {
           "role": "Solo build", "duration": "2 months", "team": "1",
           "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
@@ -151,7 +151,7 @@
         "title": "Mint Sage", "tag": "Applied ML · Full-Stack",
         "blurb": "AI personal-finance assistant with a hybrid ML + rule-based pipeline for noisy transaction text. 92% categorization accuracy on real bank data.",
         "stack": ["Python", "Scikit-Learn", "Node.js", "React", "Next.js", "Supabase"],
-        "thumb": "bloom",
+        "thumb": "/mintsage.png",
         "details": {
           "role": "Solo build", "duration": "6 weeks", "team": "1",
           "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
@@ -165,7 +165,7 @@
         "title": "Stock Monk", "tag": "NLP · Time Series",
         "blurb": "LSTM + NLP stock-price predictor that fuses news/social sentiment with historical OHLCV trends.",
         "stack": ["Python", "TensorFlow", "Keras"],
-        "thumb": "sentiment",
+        "thumb": "/stockmonk.png",
         "details": {
           "role": "Solo build", "duration": "3 months", "team": "1",
           "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
@@ -179,7 +179,7 @@
         "title": "Sanvad", "tag": "Multilingual LLM",
         "blurb": "Multilingual conversational chatbot built on LLMs and Indic-language models, robust to code-mixed Hinglish.",
         "stack": ["Python", "Transformers", "LangChain"],
-        "thumb": "waves",
+        "thumb": "/sanvad.png",
         "details": {
           "role": "ML Engineer", "duration": "3 months", "team": "2",
           "links": [],
@@ -193,7 +193,7 @@
         "title": "Doctorify", "tag": "Healthcare CV",
         "blurb": "Mobile-first disease-triage app for underserved and rural communities.",
         "stack": ["Flutter", "Python", "Scikit"],
-        "thumb": "vision",
+        "thumb": "/doctorify.png",
         "details": {
           "role": "Lead", "duration": "5 months", "team": "4",
           "links": [],
@@ -207,7 +207,7 @@
         "title": "Sprout", "tag": "Healthcare AI",
         "blurb": "Postnatal mental-health companion using AI-driven sentiment monitoring with a clinician dashboard.",
         "stack": ["Flutter", "Python", "AWS"],
-        "thumb": "bloom",
+        "thumb": "/sprout.png",
         "details": {
           "role": "ML + Backend", "duration": "4 months", "team": "3",
           "links": [],
