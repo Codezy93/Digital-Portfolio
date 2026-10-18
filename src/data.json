@@ -29,7 +29,7 @@
     "email": "virajsparadkar@gmail.com",
     "phone": "(617) 331-9680",
     "location": "Boston, MA",
-    "availability": "AVAILABLE / SUMMER 2026",
+    "availability": "AVAILABLE / SPRING 2027",
     "timezone": "America/New_York",
     "timezoneLabel": "BOS",
     "resume": "https://docs.google.com/document/d/1Kyl_4JIYPb6xZMTNUFINtGHqncy316W2IeCe5Mt3pZA/edit?usp=sharing"
@@ -82,10 +82,10 @@
     "status": {
       "label": "— CURRENT STATUS",
       "headline": "Open for",
-      "headlineAccent": "Summer 2026",
+      "headlineAccent": "Spring 2027",
       "rows": [
         { "k": "Role",     "v": "AI/ML Engineer · Intern" },
-        { "k": "Focus",    "v": "Computer Vision · LLMs · MLOps" },
+        { "k": "Focus",    "v": "Machine Learning · MLOps" },
         { "k": "Location", "v": "Boston, MA · Open to relocate" },
         { "k": "Now",      "v": "M.S. AI @ Northeastern · 2nd year" }
       ],
@@ -112,7 +112,7 @@
         "thumb": "/neuromap.png",
         "details": {
           "role": "Solo build", "duration": "Ongoing", "team": "1",
-          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
+          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93/NeuroMap" }],
           "problem": "Standard 3D segmentation models output deterministic masks, leaving clinicians no signal about where the model is uncertain — a problem at tumor boundaries where errors matter most. Volumes also exceed single-pass GPU memory, making naive inference infeasible.",
           "approach": "Built a 3D U-Net inference pipeline using MONAI sliding-window patching with mixed precision to handle 4-channel NIfTI volumes on a single GPU. Replaced deterministic outputs with Monte Carlo Dropout, running multiple stochastic forward passes per volume to compute voxel-level entropy and variance. Wrapped the model in a FastAPI inference service with a Next.js client for interactive 3D point-cloud reconstruction and slice-by-slice overlays.",
           "results": "Achieved 0.81 validation Dice while delivering interpretable uncertainty maps that highlight high-risk tumor edges. End-to-end inference runs on a single GPU; the web UI makes results inspectable for non-technical reviewers."
@@ -126,7 +126,7 @@
         "thumb": "/secondbrain.png",
         "details": {
           "role": "Solo build", "duration": "Ongoing", "team": "1",
-          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
+          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93/Second-Brain" }],
           "problem": "Personal knowledge bases are valuable enough that I didn't want them flowing through third-party inference APIs. And LLM-on-notes tools are usually evaluated by gut feel — not a real basis for iterating on retrievers.",
           "approach": "Built a fully local retrieval system over an Obsidian vault using Ollama for inference and ChromaDB for vector search with nomic-embed-text embeddings. Designed a FastAPI backend with streaming SSE responses and source attribution so every answer carries citation links back to the source notes. Wrote a formal evaluation harness with 84 labeled queries spanning 20 domains, measuring top-k hit rate and MRR to enable reproducible comparisons across embedding models and chunking strategies.",
           "results": "0.74 MRR, 88% top-3 hit rate, 96% top-5 hit rate over a 500-document corpus. Every response is grounded with source citations, and the eval harness lets me swap retrievers and measure the delta instead of guessing."
@@ -140,7 +140,7 @@
         "thumb": "/glassbox.png",
         "details": {
           "role": "Solo build", "duration": "2 months", "team": "1",
-          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
+          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93/GlassBox" }],
           "problem": "Credit-default models that beat baselines on AUC are useless in regulated settings if you can't explain a denial or give applicants a path to approval. Most XAI tooling produces post-hoc rationalizations rather than mathematically sound recourse.",
           "approach": "Trained an Explainable Boosting Machine as the core classifier, prioritizing interpretability over deep-learning AUC. Built an automated recourse engine using DiCE for counterfactual generation and Z3 formal verification to guarantee the counterfactuals are actually feasible. Layered on a governance suite with Demographic Parity fairness audits, Split Conformal Prediction bounds, and stability simulations for drift and privacy budgets (epsilon=1.0).",
           "results": "Achieved 0.8961 AUC, beating standard deep-learning baselines on this task. Every prediction ships with a fairness check, calibrated uncertainty bound, and a verified counterfactual the user can act on."
@@ -154,7 +154,7 @@
         "thumb": "/mintsage.png",
         "details": {
           "role": "Solo build", "duration": "6 weeks", "team": "1",
-          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
+          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93/MintSage" }],
           "problem": "Bank transaction strings are noisy and adversarial — pure ML classifiers misclassify high-stakes edge cases (rent, taxes, transfers) that users won't tolerate getting wrong, and pure rule-based systems can't keep up with merchant-name drift.",
           "approach": "Built a hybrid pipeline combining supervised classification with a rule-based fallback for business-critical categories. Layered in time-series forecasting for spending trends and projected cash flow, surfaced as plain-language insights. Shipped the full stack on React/Next.js with a Node.js backend and Supabase for data and auth.",
           "results": "92% categorization accuracy on labeled transaction data. Users get automated expense categorization, anomaly alerts, and forecast-driven cash-flow insights without manual tracking."
@@ -168,7 +168,7 @@
         "thumb": "/stockmonk.png",
         "details": {
           "role": "Solo build", "duration": "3 months", "team": "1",
-          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93" }],
+          "links": [{ "label": "GitHub", "href": "https://github.com/Codezy93/StockMonk" }],
           "problem": "Equity prediction models that ignore market sentiment miss the dominant short-term signal. The challenge was fusing news/social sentiment with historical price action without the sentiment channel drowning out the time-series.",
           "approach": "Trained an LSTM on multi-year OHLCV data, fine-tuned a transformer on financial news for sentiment, and concatenated the sentiment embedding with price features at the LSTM input. Used walk-forward validation across market regimes.",
           "results": "Outperformed price-only baseline by ~12% MAPE on held-out windows. Pipeline runs nightly and emits a daily forecast bundle."
@@ -252,7 +252,7 @@
         "title": "AI Engineering Intern",
         "org": "MobiNext Technologies",
         "loc": "Navi Mumbai, IN",
-        "blurb": "Owned the production CV pipeline behind MobiNext's surveillance ecosystem — from model fine-tuning to AWS deployment to operator-facing tools.",
+        "blurb": "Worked on the production CV pipeline behind MobiNext's surveillance ecosystem — from model fine-tuning to AWS deployment to operator-facing tools.",
         "highlights": [
           "Architected a modular AWS infrastructure (EC2, S3, EKS, Lambda, API Gateway) serving real-time YOLOv8 inference across 120 IP cameras at 12 sites, hitting 99.98% uptime under sustained load.",
           "Fine-tuned four YOLOv8 detection models with custom PyTorch training pipelines, improving mAP by 20.3% and cutting false positives by 60% on held-out evaluation sets.",
@@ -269,8 +269,8 @@
     "heading": { "pre": "Academic", "accent": "foundation", "post": "." },
     "sub": "Rigorous training that shaped my approach to ML, systems thinking, and practical problem-solving.",
     "items": [
-      { "from": "Sept 2025", "to": "Dec 2027", "degree": "M.S. in Artificial Intelligence",        "org": "Northeastern University · Khoury College of Computer Sciences", "loc": "Boston, MA",  "gpa": "3.5 / 4.0",  "notes": "Coursework in Deep Learning, Information Theory, Optimization, and ML Systems." },
-      { "from": "Sept 2020", "to": "Oct 2024",  "degree": "B.Tech · Computer Science & Engineering", "org": "Vellore Institute of Technology · SCOPE",                        "loc": "Vellore, IN", "gpa": "8.17 / 10",   "notes": "Focused on CS fundamentals with hands-on work through the Linux, SDE, and Health Informatics Clubs." }
+      { "from": "Sept 2025", "to": "Dec 2027", "degree": "M.S. in Artificial Intelligence",        "org": "Northeastern University · Khoury College of Computer Sciences", "loc": "Boston, MA",  "gpa": "3.67 / 4.0",  "notes": "Coursework in Deep Learning, Information Theory, Optimization, and ML Systems." },
+      { "from": "Sept 2020", "to": "Oct 2024",  "degree": "B.Tech · Computer Science & Engineering", "org": "Vellore Institute of Technology · SCOPE",                        "loc": "Bhopal, IN", "gpa": "8.17 / 10",   "notes": "Focused on CS fundamentals with hands-on work through the Linux, SDE, and Health Informatics Clubs." }
     ]
   },
   "contact": {
@@ -285,9 +285,9 @@
     "elsewhere": [
       { "k": "GitHub",      "v": "Codezy93",        "h": "https://github.com/Codezy93" },
       { "k": "LinkedIn",    "v": "viraj-paradkar",  "h": "https://www.linkedin.com/in/viraj-paradkar/" },
-      { "k": "X · Twitter", "v": "@Codezy93",       "h": "https://x.com/Codezy93" },
+      { "k": "X · Twitter", "v": "Codezy93",       "h": "https://x.com/Codezy93" },
       { "k": "Kaggle",      "v": "virajparadkar",   "h": "https://www.kaggle.com/virajparadkar" },
-      { "k": "Medium",      "v": "@virajparadkar",  "h": "https://medium.com/@virajparadkar" }
+      { "k": "Medium",      "v": "virajparadkar",  "h": "https://medium.com/@virajparadkar" }
     ]
   },
   "footer": {
